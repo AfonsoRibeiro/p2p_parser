@@ -1,6 +1,6 @@
 module example.com/p2p_parser
 
-go 1.20
+go 1.22
 
 require (
 	github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 // indirect
