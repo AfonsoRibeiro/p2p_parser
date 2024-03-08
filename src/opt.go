@@ -16,7 +16,6 @@ type Otp struct {
 
 	destpulsar                  string
 	desttopic                   string
-	destsubscription            string
 	destname                    string
 	desttrustcerts              string
 	destcertfile                string
@@ -36,8 +35,8 @@ func From_args() Otp {
 
 	flag.StringVar(&opt.sourcepulsar, "source_pulsar", "pulsar://localhost:6650", "Source pulsar address")
 	flag.StringVar(&opt.sourcetopic, "source_topic", "persistent://public/default/in", "Source topic name")
-	flag.StringVar(&opt.sourcesubscription, "source_subscription", "jq_parser", "Source subscription name")
-	flag.StringVar(&opt.sourcename, "source_name", "jq_parser_consumer", "Source consumer name")
+	flag.StringVar(&opt.sourcesubscription, "source_subscription", "parser", "Source subscription name")
+	flag.StringVar(&opt.sourcename, "source_name", "parser_consumer", "Source consumer name")
 	flag.StringVar(&opt.sourcetrustcerts, "source_trust_certs", "", "Path for source pem file, for ca.cert")
 	flag.StringVar(&opt.sourcecertfile, "source_cert_file", "", "Path for source cert.pem file")
 	flag.StringVar(&opt.sourcekeyfile, "source_key_file", "", "Path for source key-pk8.pem file")
@@ -45,8 +44,7 @@ func From_args() Otp {
 
 	flag.StringVar(&opt.destpulsar, "dest_pulsar", "pulsar://localhost:6650", "Destination pulsar address")
 	flag.StringVar(&opt.desttopic, "dest_topic", "persistent://public/default/out", "Destination topic name")
-	flag.StringVar(&opt.destsubscription, "dest_subscription", "jq_parser", "Destination subscription name")
-	flag.StringVar(&opt.destname, "dest_name", "jq_parser_consumer", "Destination producer name")
+	flag.StringVar(&opt.destname, "dest_name", "parser_producer", "Destination producer name")
 	flag.StringVar(&opt.desttrustcerts, "dest_trust_certs", "", "Path for destination pem file, for ca.cert")
 	flag.StringVar(&opt.destcertfile, "dest_cert_file", "", "Path for destination cert.pem file")
 	flag.StringVar(&opt.destkeyfile, "dest_key_file", "", "Path for destination key-pk8.pem file")
